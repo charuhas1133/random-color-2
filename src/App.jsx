@@ -5,7 +5,7 @@ const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
 function App() {
   const [type, setType] = useState("HEX");
-  const [color, setColor] = useState("#eeeee");
+  const [color, setColor] = useState("#ffffff");
 
   const genrateRamdomHexColor = () => {
     // console.log("click");
@@ -24,7 +24,7 @@ function App() {
   };
   const changetypeHandler = (data) => {
     setType(data);
-    data == "HEX" ? setColor("#eeeee") : setColor("rgb(238, 238, 238)");
+    data == "HEX" ? setColor("#ffffff") : setColor("rgb(255, 255, 255)");
   };
   return (
     <>
@@ -34,8 +34,18 @@ function App() {
           <div className="wrapper">
             <div className="item"></div>
             <div className="item">
-              <button onClick={() => changetypeHandler("HEX")}>HEX</button>
-              <button onClick={() => changetypeHandler("RGB")}>RGB</button>
+              <button
+                onClick={() => changetypeHandler("HEX")}
+                style={{ fontSize: type == "HEX" ? "40px" : "16px" }}
+              >
+                HEX
+              </button>
+              <button
+                onClick={() => changetypeHandler("RGB")}
+                style={{ fontSize: type == "RGB" ? "40px" : "16px" }}
+              >
+                RGB
+              </button>
               <button
                 onClick={
                   type == "HEX" ? genrateRamdomHexColor : genrateRamdomRGBColor

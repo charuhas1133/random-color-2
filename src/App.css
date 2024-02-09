@@ -20,7 +20,6 @@
 }
 .item {
   flex: 1 1 200px;
-  height: 5vh;
   display: flex;
   justify-content: center;
 }
